@@ -203,24 +203,25 @@
     .sec-grid{grid-template-columns:1fr;gap:20px}
     .sec-rail{margin-bottom:6px}
     .hero{padding-top:clamp(126px,18vw,150px);padding-bottom:72px}
-    .hero-top{flex-direction:column;align-items:flex-start;gap:30px}
+    .hero-top{flex-direction:column;align-items:flex-start;gap:0}
+    .hero-copy{display:contents}
     .hero h1{font-size:clamp(46px,9vw,64px);line-height:1}
+    .hero-intro{order:3;margin-top:0}
     .hero-sub{font-size:clamp(20px,3.8vw,24px);max-width:28ch}
     .hero-body{font-size:17px;line-height:1.65}
-    .hero-actions{margin-top:32px}
-    .portrait{width:clamp(128px,30vw,150px);margin-top:0}
+    .hero-meta{order:4}
+    .hero-actions{order:5;margin-top:32px}
+    .portrait{order:2;width:clamp(118px,28vw,136px);margin:24px 0 24px}
     .hero .topo{background-position:right -170px top 4px;background-size:auto 118%;opacity:.22}
   }
   @media (max-width:560px){
     .nav-inner{height:64px}
     .hero{padding-top:110px;padding-bottom:58px}
-    .hero-top{gap:28px}
     .hero h1{font-size:clamp(42px,14vw,56px)}
-    .hero-intro{margin-top:18px}
     .hero-sub{font-size:clamp(19px,5vw,22px)}
     .hero-meta{margin-top:22px}
     .hero-actions{gap:22px;margin-top:30px}
-    .portrait{width:120px}
+    .portrait{width:112px;margin:20px 0 22px}
   }
 </style>
 </head>

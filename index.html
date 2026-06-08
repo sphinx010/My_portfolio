@@ -93,19 +93,15 @@
   .topo{position:absolute;inset:0;z-index:0;pointer-events:none;
     background-repeat:no-repeat}
   .hero .topo{background-image:url("assets/topo-hero-4k.png");
-    background-position:right -22vw top -17vw;background-size:min(2200px,168vw) auto;opacity:.38;
+    background-position:right -24vw top -18vw;background-size:min(2600px,190vw) auto;opacity:.16;
     -webkit-mask-image:radial-gradient(125% 100% at 100% 0%,#000 0%,rgba(0,0,0,.55) 38%,transparent 72%);
     mask-image:radial-gradient(125% 100% at 100% 0%,#000 0%,rgba(0,0,0,.55) 38%,transparent 72%)}
   #contact{position:relative;overflow:hidden}
   #contact .wrap{position:relative;z-index:1}
   #contact .topo{background-image:url("assets/topo-contact-4k.png");
-    background-position:left -28vw bottom -16vw;background-size:min(2100px,155vw) auto;opacity:.3;
+    background-position:left -30vw bottom -18vw;background-size:min(2500px,180vw) auto;opacity:.14;
     -webkit-mask-image:radial-gradient(120% 110% at 0% 100%,#000 0%,rgba(0,0,0,.5) 40%,transparent 74%);
     mask-image:radial-gradient(120% 110% at 0% 100%,#000 0%,rgba(0,0,0,.5) 40%,transparent 74%)}
-  @media (max-width:560px){
-    .hero .topo{background-position:right -180px top -40px;background-size:950px auto;opacity:.24}
-    #contact .topo{background-position:left -260px bottom -80px;background-size:980px auto;opacity:.22}
-  }
   .hero h1{font-size:clamp(52px,9vw,108px);font-weight:300;letter-spacing:-.035em;max-width:11ch}
   .portrait{flex:none;width:clamp(108px,13vw,150px);aspect-ratio:4/5;border-radius:8px;overflow:hidden;
     margin-top:10px;filter:grayscale(.28) contrast(1.02);background:var(--canvas);box-shadow:0 14px 32px rgba(26,25,22,.08)}
@@ -125,24 +121,24 @@
   #about::before,#work::before,#skills::before,#background::before{
     content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-repeat:no-repeat;
     background-image:url("assets/topo-mid-4k.png")}
-  #about::before{background-position:right -34vw top -18vw;background-size:min(1700px,124vw) auto;opacity:.18;
+  #about::before{background-position:right -38vw top -20vw;background-size:min(2300px,168vw) auto;opacity:.08;
     -webkit-mask-image:radial-gradient(95% 82% at 100% 0%,#000 0%,rgba(0,0,0,.45) 42%,transparent 74%);
     mask-image:radial-gradient(95% 82% at 100% 0%,#000 0%,rgba(0,0,0,.45) 42%,transparent 74%)}
-  #work::before{background-position:right -36vw top 18%;background-size:min(1850px,132vw) auto;opacity:.17;
+  #work::before{background-position:right -38vw top 18%;background-size:min(2400px,174vw) auto;opacity:.08;
     -webkit-mask-image:radial-gradient(96% 86% at 100% 28%,#000 0%,rgba(0,0,0,.42) 44%,transparent 75%);
     mask-image:radial-gradient(96% 86% at 100% 28%,#000 0%,rgba(0,0,0,.42) 44%,transparent 75%)}
-  #skills::before{background-image:url("assets/topo-contact-4k.png");background-position:left -43vw center;background-size:min(1750px,128vw) auto;opacity:.15;
+  #skills::before{background-image:url("assets/topo-contact-4k.png");background-position:left -46vw center;background-size:min(2300px,168vw) auto;opacity:.075;
     -webkit-mask-image:radial-gradient(96% 86% at 0% 50%,#000 0%,rgba(0,0,0,.42) 42%,transparent 75%);
     mask-image:radial-gradient(96% 86% at 0% 50%,#000 0%,rgba(0,0,0,.42) 42%,transparent 75%)}
-  #background::before{background-position:right -38vw bottom -18vw;background-size:min(1750px,126vw) auto;opacity:.15;
+  #background::before{background-position:right -40vw bottom -20vw;background-size:min(2300px,168vw) auto;opacity:.075;
     -webkit-mask-image:radial-gradient(96% 86% at 100% 100%,#000 0%,rgba(0,0,0,.42) 42%,transparent 75%);
     mask-image:radial-gradient(96% 86% at 100% 100%,#000 0%,rgba(0,0,0,.42) 42%,transparent 75%)}
   @media (max-width:560px){
-    #about::before,#work::before,#skills::before,#background::before{background-size:1050px auto;opacity:.13}
-    #about::before{background-position:right -320px top -90px}
-    #work::before{background-position:right -330px top 12%}
-    #skills::before{background-position:left -340px center}
-    #background::before{background-position:right -340px bottom -70px}
+    #about::before,#work::before,#skills::before,#background::before{background-size:1450px auto;opacity:.065}
+    #about::before{background-position:right -520px top -160px}
+    #work::before{background-position:right -530px top 12%}
+    #skills::before{background-position:left -540px center}
+    #background::before{background-position:right -540px bottom -140px}
   }
 
   /* ===== ABOUT ===== */
@@ -247,6 +243,7 @@
   @media (max-width:560px){
     .nav-inner{height:64px}
     .hero{padding-top:110px;padding-bottom:58px}
+    .hero .topo{background-position:right -300px top -110px;background-size:1500px auto;opacity:.12}
     .hero-top{grid-template-columns:minmax(0,1fr) 88px;column-gap:12px}
     .hero h1{font-size:clamp(40px,11vw,50px)}
     .hero-intro{margin-top:24px}
@@ -254,6 +251,7 @@
     .hero-meta{margin-top:22px}
     .hero-actions{gap:22px;margin-top:30px}
     .portrait{margin-top:2px}
+    #contact .topo{background-position:left -430px bottom -120px;background-size:1500px auto;opacity:.1}
   }
   @media (max-width:360px){
     .hero-top{grid-template-columns:1fr;grid-template-areas:"title" "portrait" "intro" "meta" "actions"}

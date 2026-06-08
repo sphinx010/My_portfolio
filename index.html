@@ -202,13 +202,25 @@
     .menu-btn{display:block}
     .sec-grid{grid-template-columns:1fr;gap:20px}
     .sec-rail{margin-bottom:6px}
-    .hero{padding-top:clamp(108px,16vw,140px)}
-    .hero h1{font-size:clamp(48px,10vw,82px)}
+    .hero{padding-top:clamp(126px,18vw,150px);padding-bottom:72px}
+    .hero-top{flex-direction:column;align-items:flex-start;gap:30px}
+    .hero h1{font-size:clamp(46px,9vw,64px);line-height:1}
+    .hero-sub{font-size:clamp(20px,3.8vw,24px);max-width:28ch}
+    .hero-body{font-size:17px;line-height:1.65}
+    .hero-actions{margin-top:32px}
+    .portrait{width:clamp(128px,30vw,150px);margin-top:0}
+    .hero .topo{background-position:right -170px top 4px;background-size:auto 118%;opacity:.22}
   }
   @media (max-width:560px){
-    .hero-top{flex-direction:column;align-items:flex-start;gap:24px}
-    .portrait{width:120px;margin-top:0}
-    .hero-intro{margin-top:20px}
+    .nav-inner{height:64px}
+    .hero{padding-top:110px;padding-bottom:58px}
+    .hero-top{gap:28px}
+    .hero h1{font-size:clamp(42px,14vw,56px)}
+    .hero-intro{margin-top:18px}
+    .hero-sub{font-size:clamp(19px,5vw,22px)}
+    .hero-meta{margin-top:22px}
+    .hero-actions{gap:22px;margin-top:30px}
+    .portrait{width:120px}
   }
 </style>
 </head>
@@ -442,6 +454,27 @@
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open'); btn.textContent='Menu'; document.body.style.overflow='';
   }));
+
+  const removeMascotOverlays = () => {
+    document.querySelectorAll('body *').forEach(el => {
+      if (el.closest('header.nav, .mobile-menu')) return;
+      const cs = getComputedStyle(el);
+      if (cs.position !== 'fixed') return;
+      const rect = el.getBoundingClientRect();
+      const lowerRight = rect.width <= 220 && rect.height <= 220 &&
+        rect.left > window.innerWidth * 0.45 && rect.top > window.innerHeight * 0.35;
+      if (!lowerRight) return;
+      const label = `${el.id} ${el.className} ${el.getAttribute('aria-label') || ''}`.toLowerCase();
+      const hasMascotName = /(robot|bot|mascot|assistant|chat|widget)/.test(label);
+      const hasMascotImage = [...el.querySelectorAll('img')].some(img =>
+        /(robot|bot|mascot|assistant|chat)/i.test(`${img.src} ${img.alt || ''}`));
+      const containsVisualWidget = el.matches('img, svg, canvas, button') ||
+        el.querySelector('img, svg, canvas, button');
+      if (hasMascotName || hasMascotImage || containsVisualWidget) el.remove();
+    });
+  };
+  window.addEventListener('load', removeMascotOverlays);
+  setTimeout(removeMascotOverlays, 1000);
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });

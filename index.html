@@ -159,6 +159,13 @@
   .about-copy p{max-width:680px}
   .about-copy p + p{margin-top:22px}
   .about-copy .accent-ink{color:var(--accent)}
+  @media (max-width:680px){
+    .about-copy{position:relative;padding-left:20px}
+    .about-copy::before{content:"";position:absolute;left:0;top:.42em;bottom:.4em;width:1px;background:linear-gradient(to bottom,var(--accent),var(--line-soft));opacity:.5}
+    .about-copy p{position:relative;font-size:clamp(18px,5vw,21px);line-height:1.55;letter-spacing:-.01em}
+    .about-copy p::before{content:"";position:absolute;left:-24px;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--canvas);border:1px solid var(--accent)}
+    .about-copy p + p{margin-top:20px}
+  }
   .about-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:54px;border-top:1px solid var(--line)}
   .about-highlights .hl{padding:24px 24px 24px 0;border-right:1px solid var(--line-soft)}
   .about-highlights .hl:last-child{border-right:0}
@@ -174,12 +181,17 @@
   .work-item{display:grid;grid-template-columns:1fr;gap:18px;padding:clamp(34px,4.5vw,52px) 0;border-bottom:1px solid var(--line)}
   .work-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px}
   .work-head .name{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:400;letter-spacing:-.025em}
+  .work-head .name-main{display:block}
+  .work-head .name-note{display:block;margin-top:7px;font-size:clamp(20px,2.4vw,28px);font-weight:300;line-height:1.16;letter-spacing:-.015em;color:var(--muted)}
   .work-head .status{font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap;letter-spacing:.02em}
   .work-item .desc{font-size:clamp(16px,1.7vw,18px);color:var(--muted);line-height:1.65;max-width:62ch}
   .work-foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;margin-top:4px}
   .tagline{font-size:13.5px;color:var(--faint);letter-spacing:.01em}
   .tagline .sep{color:var(--line);margin:0 9px}
-  @media (max-width:560px){.work-head{flex-direction:column;gap:8px}}
+  @media (max-width:560px){
+    .work-head{flex-direction:column;gap:8px}
+    .work-head .name-note{margin-top:5px;font-size:clamp(18px,5vw,22px);line-height:1.2}
+  }
 
   /* ===== SKILLS ===== */
   .skills-list{border-top:1px solid var(--line)}
@@ -335,7 +347,7 @@
       <div class="about-copy">
         <p class="reveal">I'm a QA engineer and Barrister at Law working at the intersection of software quality, AI reliability, and legal reasoning. I build systems that don't just produce fluent output, but can be <span class="accent-ink">tested, audited, traced, and trusted</span> — the properties that matter most in high-stakes, regulated work.</p>
         <p class="reveal" data-d="1">My central project is <span class="accent-ink">LexTutor</span>, a legal-AI exam-intelligence system for Nigerian Bar Finals candidates, built around route-validated grading, authority discipline, and reasoning fidelity rather than raw generation. It grows out of a simple conviction, argued in my paper <a href="/assets/The_Reliability_Gap.pdf" target="_blank" rel="noopener" class="accent-ink">The Reliability Gap</a>: that AI's failure on legal reasoning is architectural, not a matter of scale.</p>
-        <p class="reveal" data-d="2">Alongside it I build the testing infrastructure that holds AI systems to that standard — including <a href="https://github.com/sphinx010/testAIgnite" target="_blank" rel="noopener" class="accent-ink">TestAIgnite</a>, a framework that pairs CI automation with grounded model-driven root-cause analysis. Barrister's judgment, engineer's execution.</p>
+        <p class="reveal" data-d="2">Alongside it I build the testing infrastructure that holds AI systems to that standard — including <a href="https://github.com/sphinx010/testAIgnite" target="_blank" rel="noopener" class="accent-ink">TestAIgnite</a>, a framework that pairs CI automation with grounded model-driven root-cause analysis.</p>
       </div>
       <div class="about-highlights reveal" data-d="1">
         <div class="hl"><div class="k">Role</div><div class="v">QA &amp; AI Reliability Engineer</div></div>
@@ -352,7 +364,7 @@
     <div class="sec-rail"><div class="label reveal"><span class="idx">02</span> Writing</div></div>
     <div class="work-list">
       <article class="work-item reveal">
-        <div class="work-head"><span class="name">The Reliability Gap: Why Artificial Intelligence Still Cannot Be Trusted with Legal Reasoning</span> <span class="status">Position Paper</span></div>
+        <div class="work-head"><span class="name"><span class="name-main">The Reliability Gap</span><span class="name-note">Why Artificial Intelligence Still Cannot Be Trusted with Legal Reasoning</span></span> <span class="status">Position Paper</span></div>
         <p class="desc">A field analysis of the gap between fluent legal language and reliable legal reasoning. Argues that the failure of general-purpose AI on legal questions is architectural — a lack of navigational discipline, not a lack of intelligence — and defines the properties any credible legal-reasoning system must satisfy: authority grounding, procedural fidelity, commitment discipline, honest boundaries, and traceability.</p>
         <div class="work-foot">
           <a href="/assets/The_Reliability_Gap.pdf" target="_blank" rel="noopener" class="tlink accent">Read paper <span class="ar">→</span></a>

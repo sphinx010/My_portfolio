@@ -125,12 +125,15 @@
   .sec-grid{display:grid;grid-template-columns:200px 1fr;gap:clamp(28px,5vw,72px);align-items:start}
   .sec-rail{position:sticky;top:96px}
   @media (max-width:860px){.sec-rail{position:static}}
-  #about::before,#work::before,#skills::before,#background::before{
+  #about::before,#writing::before,#work::before,#skills::before,#background::before{
     content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-repeat:no-repeat;
     background-image:url("assets/topo-mid-4k.png")}
   #about::before{background-position:right -18vw top -8vw;background-size:min(1550px,140vw) auto;opacity:.18;
     -webkit-mask-image:radial-gradient(104% 88% at 100% 0%,#000 0%,rgba(0,0,0,.82) 48%,rgba(0,0,0,.32) 78%,transparent 96%);
     mask-image:radial-gradient(104% 88% at 100% 0%,#000 0%,rgba(0,0,0,.82) 48%,rgba(0,0,0,.32) 78%,transparent 96%)}
+  #writing::before{background-position:left -18vw top 10%;background-size:min(1550px,140vw) auto;opacity:.16;
+    -webkit-mask-image:radial-gradient(104% 90% at 0% 28%,#000 0%,rgba(0,0,0,.8) 48%,rgba(0,0,0,.32) 78%,transparent 96%);
+    mask-image:radial-gradient(104% 90% at 0% 28%,#000 0%,rgba(0,0,0,.8) 48%,rgba(0,0,0,.32) 78%,transparent 96%)}
   #work::before{background-position:right -18vw top 14%;background-size:min(1650px,145vw) auto;opacity:.17;
     -webkit-mask-image:radial-gradient(104% 90% at 100% 28%,#000 0%,rgba(0,0,0,.8) 48%,rgba(0,0,0,.32) 78%,transparent 96%);
     mask-image:radial-gradient(104% 90% at 100% 28%,#000 0%,rgba(0,0,0,.8) 48%,rgba(0,0,0,.32) 78%,transparent 96%)}
@@ -141,8 +144,9 @@
     -webkit-mask-image:radial-gradient(104% 90% at 100% 100%,#000 0%,rgba(0,0,0,.8) 48%,rgba(0,0,0,.32) 78%,transparent 96%);
     mask-image:radial-gradient(104% 90% at 100% 100%,#000 0%,rgba(0,0,0,.8) 48%,rgba(0,0,0,.32) 78%,transparent 96%)}
   @media (max-width:560px){
-    #about::before,#work::before,#skills::before,#background::before{background-size:920px auto;opacity:.16}
+    #about::before,#writing::before,#work::before,#skills::before,#background::before{background-size:920px auto;opacity:.16}
     #about::before{background-position:right -250px top -70px}
+    #writing::before{background-position:left -260px top 8%}
     #work::before{background-position:right -260px top 10%}
     #skills::before{background-position:left -260px center}
     #background::before{background-position:right -260px bottom -70px}
@@ -213,7 +217,7 @@
   footer.ft{border-top:1px solid var(--line);padding:34px 0}
   .ft-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
   .ft-inner .c{font-size:13px;color:var(--faint)}
-  .ft-links{display:flex;gap:24px}
+  .ft-links{display:flex;gap:24px;flex-wrap:wrap}
   .ft-links a{font-size:13px;color:var(--muted)}
   .ft-links a:hover{color:var(--ink)}
 
@@ -279,6 +283,7 @@
     <nav class="nav-links">
       <a href="#work">Work</a>
       <a href="#about">About</a>
+      <a href="#writing">Writing</a>
       <a href="#skills">Skills</a>
       <a href="#background">Background</a>
       <a href="#contact">Contact</a>
@@ -290,9 +295,10 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="#work"><span class="n">01</span>Work</a>
   <a href="#about"><span class="n">02</span>About</a>
-  <a href="#skills"><span class="n">03</span>Skills</a>
-  <a href="#background"><span class="n">04</span>Background</a>
-  <a href="#contact"><span class="n">05</span>Contact</a>
+  <a href="#writing"><span class="n">03</span>Writing</a>
+  <a href="#skills"><span class="n">04</span>Skills</a>
+  <a href="#background"><span class="n">05</span>Background</a>
+  <a href="#contact"><span class="n">06</span>Contact</a>
 </div>
 
 <span id="top"></span>
@@ -339,10 +345,26 @@
   </div>
 </section>
 
+<!-- ===== WRITING ===== -->
+<section id="writing" class="sec">
+  <div class="wrap sec-grid">
+    <div class="sec-rail"><div class="label reveal"><span class="idx">02</span> Writing</div></div>
+    <div class="work-list">
+      <article class="work-item reveal">
+        <div class="work-head"><span class="name">The Reliability Gap: Why Artificial Intelligence Still Cannot Be Trusted with Legal Reasoning</span> <span class="status">Position Paper</span></div>
+        <p class="desc">A field analysis of the gap between fluent legal language and reliable legal reasoning. Argues that the failure of general-purpose AI on legal questions is architectural — a lack of navigational discipline, not a lack of intelligence — and defines the properties any credible legal-reasoning system must satisfy: authority grounding, procedural fidelity, commitment discipline, honest boundaries, and traceability.</p>
+        <div class="work-foot">
+          <a href="/assets/The_Reliability_Gap.pdf" target="_blank" rel="noopener" class="tlink accent">Read paper <span class="ar">→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FEATURED WORK ===== -->
 <section id="work" class="sec">
   <div class="wrap sec-grid">
-    <div class="sec-rail"><div class="label reveal"><span class="idx">02</span> Selected Work</div></div>
+    <div class="sec-rail"><div class="label reveal"><span class="idx">03</span> Selected Work</div></div>
     <div class="work-list">
 
       <article class="work-item reveal">
@@ -387,7 +409,7 @@
 <!-- ===== SKILLS ===== -->
 <section id="skills" class="sec">
   <div class="wrap sec-grid">
-    <div class="sec-rail"><div class="label reveal"><span class="idx">03</span> Capabilities</div></div>
+    <div class="sec-rail"><div class="label reveal"><span class="idx">04</span> Capabilities</div></div>
     <div class="skills-list">
       <div class="skill-row reveal">
         <div class="cat">Test Automation</div>
@@ -416,7 +438,7 @@
 <!-- ===== BACKGROUND ===== -->
 <section id="background" class="sec">
   <div class="wrap sec-grid">
-    <div class="sec-rail"><div class="label reveal"><span class="idx">04</span> Background</div></div>
+    <div class="sec-rail"><div class="label reveal"><span class="idx">05</span> Background</div></div>
     <div class="bg-list">
       <div class="bg-row reveal">
         <div class="when">Dec 2025 — Present</div>
@@ -454,7 +476,7 @@
 <section id="contact" class="sec">
   <span class="topo"></span>
   <div class="wrap contact-grid">
-    <div class="sec-rail"><div class="label reveal"><span class="idx">05</span> Contact</div></div>
+    <div class="sec-rail"><div class="label reveal"><span class="idx">06</span> Contact</div></div>
     <div>
       <h2 class="contact-h reveal">Let's build reliable AI and QA systems.</h2>
       <a href="mailto:Obembeayooluwa.work@gmail.com" class="email reveal" data-d="1">Obembeayooluwa.work@gmail.com</a>
@@ -472,6 +494,7 @@
     <div class="c">© <span id="yr"></span> Ayooluwa Obembe — QA Automation &amp; AI Reliability Engineer</div>
     <div class="ft-links">
       <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
       <a href="#about">About</a>
       <a href="https://www.linkedin.com/in/ayooluwa-obembe-898a782b0/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/sphinx010" target="_blank" rel="noopener">GitHub</a>
@@ -536,7 +559,7 @@
   window.addEventListener('load', () => setTimeout(revealAll, 1200));
   setTimeout(revealAll, 2500);
 
-  const sections = ['work','about','skills','background','contact'].map(id => document.getElementById(id));
+  const sections = ['work','about','writing','skills','background','contact'].map(id => document.getElementById(id));
   const links = [...document.querySelectorAll('.nav-links a')];
   if ('IntersectionObserver' in window) {
     const spy = new IntersectionObserver((entries) => {

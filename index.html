@@ -160,11 +160,12 @@
   .about-copy p + p{margin-top:22px}
   .about-copy .accent-ink{color:var(--accent)}
   @media (max-width:680px){
-    .about-copy{position:relative;padding-left:20px}
-    .about-copy::before{content:"";position:absolute;left:0;top:.42em;bottom:.4em;width:1px;background:linear-gradient(to bottom,var(--accent),var(--line-soft));opacity:.5}
-    .about-copy p{position:relative;font-size:clamp(18px,5vw,21px);line-height:1.55;letter-spacing:-.01em}
-    .about-copy p::before{content:"";position:absolute;left:-24px;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--canvas);border:1px solid var(--accent)}
-    .about-copy p + p{margin-top:20px}
+    .about-copy{position:relative;padding-left:18px}
+    .about-copy::before{content:"";position:absolute;left:0;top:.48em;bottom:.45em;width:1px;background:linear-gradient(to bottom,var(--accent),var(--line-soft));opacity:.45}
+    .about-copy p{position:relative;font-size:clamp(17px,4.7vw,19px);line-height:1.62;letter-spacing:-.005em;text-wrap:pretty}
+    .about-copy p::before{content:"";position:absolute;left:-22px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--canvas);border:1px solid var(--accent)}
+    .about-copy p + p{margin-top:19px}
+    .about-copy a.accent-ink{white-space:nowrap}
   }
   .about-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:54px;border-top:1px solid var(--line)}
   .about-highlights .hl{padding:24px 24px 24px 0;border-right:1px solid var(--line-soft)}
